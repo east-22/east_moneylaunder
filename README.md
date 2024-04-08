@@ -15,4 +15,4 @@ If i get my bigger projects out of the way, i will improve this code with locale
 I just like ox_lib notifications, thats the only notification i now use in my scripts.
 # Other scripts
 If you are interested in other scripts that ive made, check out our discord server.
-(https://discord.gg/YBV7ayhk56)
+https://discord.gg/4gm9yjCVmq
