@@ -1,5 +1,7 @@
 # MONEY LAUNDERING SCRIPT
 With this script players can launder / wash their dirty money
+# Preview
+https://youtu.be/MonNrCoFrpc?si=PZ1xqFEC-iu0Jk9E
 # Usage
 Just drag the east_moneylaunder to your resource folder and put "ensure east_moneylaunder" in server.cfg
 # Config
