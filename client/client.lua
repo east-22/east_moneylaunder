@@ -71,7 +71,6 @@ function inputmenu(blackMoney)
                 TriggerServerEvent('DiscordLog', inputText)
                 menu.close()
             else
-            end
                 ESX.ShowNotification(TranslateCap('Invalidamount'), "error", 3000)
             end
         else

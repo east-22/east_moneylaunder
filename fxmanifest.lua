@@ -23,7 +23,9 @@ shared_scripts {
     '@es_extended/imports.lua',
     '@ox_lib/init.lua',
     'config.lua',
-    'locales/*.lua'
+	'@es_extended/locale.lua',
+	'locales/*.lua',
 }
 
 lua54 'yes'
+dependency 'es_extended'

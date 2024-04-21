@@ -4,9 +4,8 @@ Config = {}
 
 -- Discord Webhook Stuff
 Config.WebhookName = 'Logs' -- webhook Name
-Config.webhooklink = '' -- Webhook Link
-Config.servername = 'TestServer' --add your server name
-
+Config.webhooklink = '' -- set Discord Webhook Link Here
+Config.servername = 'TestServer' --Set Server name to show in Discord Logs
 
 --Money Wash Prop
 Config.useProp = true -- want to use the washing machine prop? 
