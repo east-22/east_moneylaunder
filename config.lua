@@ -4,7 +4,7 @@ Config = {}
 
 -- Discord Webhook Stuff
 Config.WebhookName = 'Logs' -- webhook Name
-Config.webhooklink = '' -- set Discord Webhook Link Here
+Config.webhooklink = 'https://discord.com/api/webhooks/YourWebHookHere' -- set Discord Webhook Link Here
 Config.servername = 'TestServer' --Set Server name to show in Discord Logs
 
 --Money Wash Prop
