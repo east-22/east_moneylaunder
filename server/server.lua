@@ -10,7 +10,7 @@ AddEventHandler('startWashing', function(amountToWash)
     local playerId = _source
 
     if xPlayer.getAccount('black_money').money < amountToWash then
-      TriggerClientEvent('esx:showNotification', _source, Config.notif4)
+      TriggerClientEvent('esx:showNotification', _source, TranslateCap('notif4'))
         return
     end
 
@@ -22,7 +22,7 @@ AddEventHandler('startWashing', function(amountToWash)
     xPlayer.addMoney(CashAfterTax)
 
     --TriggerClientEvent('moneyWashCompleted', _source)
-    TriggerClientEvent('esx:showNotification', _source, Config.notif3..CashAfterTax..'€')
+    TriggerClientEvent('esx:showNotification', _source, TranslateCap('notif3')..CashAfterTax..'€')
     TriggerServerEvent('DiscordLog', amountToWash)
 end)
 
@@ -45,16 +45,16 @@ AddEventHandler('DiscordLog', function(amountToWash)
 	
   local xPlayer = ESX.GetPlayerFromId(source)
   local id = xPlayer.getIdentifier()
-  local logs = 'YOURWEBHOOK HERE'
+  local logs = Config.webhooklink
   local name = xPlayer.getName()
   local DATE = os.date(" %H:%M %d.%m.%y")
   local connect = {
 	{
 		["color"] = "8663711",
-		["title"] = "Money launder",
+		["title"] = TranslateCap('Moneylaunder'),
 		["description"] = "".. name .. "\n IDENTIFIER: [" .. id .. "] \n" .. "Laundered money: " .. amountToWash .. "" .. "\nTime: ".. DATE .. "",
 		["footer"] = {
-		["text"] = "Server name here", -- add your server name
+		["text"] = Config.servername,
 		},
 	}
 }
