@@ -13,6 +13,8 @@ If you want to impove the code, make a fork please.
 # Updates! :O
 If i get my bigger projects out of the way, i will improve this code with locales, and configurable to use ox lib or default esx notifications.
 I just like ox_lib notifications, thats the only notification i now use in my scripts.
+
+Thanks to [GamingProVideos](https://github.com/GamingProVideos) for making little changes to the script!
 # Other scripts
 If you are interested in other scripts that ive made, check out our discord server.
 https://discord.gg/4gm9yjCVmq
