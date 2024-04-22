@@ -16,13 +16,13 @@ function OpenMenu()
         local markerIn = GetDistanceBetweenCoords(playerCoords.x, playerCoords.y, playerCoords.z, Config.teleportIn.x, Config.teleportIn.y, Config.teleportIn.z, true)
         local markerOut = GetDistanceBetweenCoords(playerCoords.x, playerCoords.y, playerCoords.z, Config.teleportOut.x, Config.teleportOut.y, Config.teleportOut.z, true)
         if distance <= Config.Radius then
-            DrawText3D(Config.Coords.x, Config.Coords.y, Config.Coords.z, Config.Drawnotif)
+            DrawText3D(Config.Coords.x, Config.Coords.y, Config.Coords.z, TranslateCap('Drawnotfi'))
             if IsControlJustPressed(1, 51) then
                 TriggerServerEvent('start')
             end
         end
         if markerOut <= 1.5 then
-            DrawText3D(Config.teleportOut.x, Config.teleportOut.y, Config.teleportOut.z, 'Get the fuck outta here!')
+            DrawText3D(Config.teleportOut.x, Config.teleportOut.y, Config.teleportOut.z, TranslateCap('Teleportout'))
             if IsControlJustPressed(1, 51) then 
                 DoScreenFadeOut(1000)
                 Citizen.Wait(1000)-- DO NOT TOUCH THESE, FADE WONT WORK WITHOUT AND ALSO WONT LOOK SMOOTH
@@ -32,7 +32,7 @@ function OpenMenu()
                 Citizen.Wait(1000)
             end
         elseif markerIn <= 1.5 then
-            DrawText3D(Config.teleportIn.x, Config.teleportIn.y, Config.teleportIn.z, 'What is this door?')
+            DrawText3D(Config.teleportIn.x, Config.teleportIn.y, Config.teleportIn.z, TranslateCap('Teleportin'))
             if IsControlJustPressed(1, 51) then 
                 DoScreenFadeOut(1000)
                 Citizen.Wait(1000)
@@ -56,11 +56,11 @@ end)
 
 function inputmenu(blackMoney)
     local input = {
-        {label = Config.notif1, value = '', type = 'text'}
+        {label = TranslateCap('notif1'), value = '', type = 'text'}
     }
 
     ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'inputmoney', {
-        title       = Config.notif1 .. blackMoney, 
+        title       = TranslateCap('notif1') .. blackMoney, 
         align       = 'center',
         elements = input
     }, function(data, menu)
@@ -71,10 +71,10 @@ function inputmenu(blackMoney)
                 TriggerServerEvent('DiscordLog', inputText)
                 menu.close()
             else
-                ESX.ShowNotification("Invalid amount!", "error", 3000)
+                ESX.ShowNotification(TranslateCap('Invalidamount'), "error", 3000)
             end
         else
-            ESX.ShowNotification("Invalid input!", "error", 3000)
+            ESX.ShowNotification(TranslateCap('Invalidinput'), "error", 3000)
         end
     end, function(data, menu)
         menu.close()
@@ -87,7 +87,7 @@ RegisterNetEvent('progressbar')
 AddEventHandler('progressbar', function(duration)
     if lib.progressCircle({
         duration = 1000,
-        label = 'Putting the money...',
+        label = TranslateCap('Moneyin'),
         position = 'bottom',
         useWhileDead = false,
         canCancel = true,
@@ -98,11 +98,11 @@ AddEventHandler('progressbar', function(duration)
             dict = 'random@domestic',
             clip = 'pickup_low'
         } 
-    }) then ESX.ShowNotification(Config.notif2, "info", 3000) -- notify the player that money washing is started
+    }) then ESX.ShowNotification(TranslateCap('notif2'), "info", 3000) -- notify the player that money washing is started
     end
     if lib.progressCircle({
         duration = Config.washtime,
-        label = Config.Progresslabel,
+        label = TranslateCap('MoneyProgress'),
         position = 'bottom',
         useWhileDead = false,
         canCancel = true,
